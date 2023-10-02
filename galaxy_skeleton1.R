@@ -11,7 +11,7 @@
 # URL direcly or read the data from the local file that is in the repository.
 library(tidyverse)
 
-data_raw <- readLines(con="UCNG_Table4.txt")
+data_raw <- readLines(con="suites_dw_Table1.txt")
 
 # Identify the line number L of the separator line between the column names and
 # the rest of the data table.
@@ -61,20 +61,20 @@ galaxies <- read_csv("data_1.csv")
 # Histogram
 library(ggplot2)
 
-ggplot(galaxies, aes(x = cz)) +
-  geom_histogram(bins = 15, fill ="gray", color="black") +
+ggplot(galaxies, aes(x = a_26)) +
+  geom_histogram(bins = 25, fill ="gray", color="black") +
   labs(title = "Galaxy Size Distribution",
-       x = "Size",
+       x = "Linear diameter of the galaxy in kpc (a_26)",
        y = "Frequency") +
   theme_minimal()
 
 # Observe lower frequency of lower size than larger size
-# Assuming an more equal distribution between smaler and larger sizes, there 
+# Assuming an more equal distribution between smaller and larger sizes, there 
 # should not be a large peak
 
 # A plausible explanation could be that the sample is affected by selection bias.
-# Smaller ones could be more difficult to detect the further away from us they are
-# which would exclude them from the sample of detected ones.
+# Smaller ones could be more difficult to detect the further away from us they 
+# are which would exclude them from the sample of detected ones.
 
 #Problem 4
 #-------------------------------------------------------------------------------
