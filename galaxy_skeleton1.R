@@ -2,6 +2,9 @@
 # Skeleton file 1 for Assignment 1 in BAN400. 
 # -------------------------------------------
 
+#Problem 2
+#-------------------------------------------------------------------------------
+
 # Comments below describes briefly a set of steps that solves Problem 2.
 
 # Read the entire data file into memory using the readLines()-function. Use the
@@ -54,3 +57,24 @@ cat(comma_separated_values_with_names, sep = "\n", file = "data_1.csv")
 galaxies <- read_csv("data_1.csv")
 
 #Problem 3
+#-------------------------------------------------------------------------------
+# Histogram
+library(ggplot2)
+
+ggplot(galaxies, aes(x = cz)) +
+  geom_histogram(bins = 15, fill ="gray", color="black") +
+  labs(title = "Galaxy Size Distribution",
+       x = "Size",
+       y = "Frequency") +
+  theme_minimal()
+
+# Observe lower frequency of lower size than larger size
+# Assuming an more equal distribution between smaler and larger sizes, there 
+# should not be a large peak
+
+# A plausible explanation could be that the sample is affected by selection bias.
+# Smaller ones could be more difficult to detect the further away from us they are
+# which would exclude them from the sample of detected ones.
+
+#Problem 4
+#-------------------------------------------------------------------------------
